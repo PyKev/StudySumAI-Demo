@@ -38,8 +38,8 @@
         "Add some features you would like your summaries to have (Optional)"],
     "features_example": ["Ejemplo: Nombra los puntos mas importantes en viñetas",
         "Example: List the most important points in bullet points."],
-    "header_main": ["Resume y Chatea con tus [PDFs](https://studysumai.streamlit.app/PDFs) y [Videos de YouTube](https://studysumai.streamlit.app/YoutubeVideos) 🤓",
-    "Summarize and Chat with your [PDFs](https://studysumai.streamlit.app/PDFs) and [YouTube Videos](https://studysumai.streamlit.app/YoutubeVideos) 🤓"],
+    "header_main": ["Resume y Chatea con tus [PDFs](https://studysumai.streamlit.app/PDFs) y [Videos de YouTube](https://studysumai.streamlit.app/YoutubeVideos)",
+    "Summarize and Chat with your [PDFs](https://studysumai.streamlit.app/PDFs) and [YouTube Videos](https://studysumai.streamlit.app/YoutubeVideos)"],
     "api_text" : [
         "Esta app funcionará solo si cuentas con una API key.\n - Para obtener una API key de OpenAI y poder hacer uso de los modelos GPT, debes registrarte en https://openai.com/ al crear una cuenta por primera vez obtendrás 5$ de crédito.\n - Para obtener una API key de HugginFace debes registrarte en https://huggingface.co/ luego ir a 'Settings' y dirigirte a 'Access Tokens'.",
         "This app will only work if you have an API key.\n - To obtain an API key from OpenAI and be able to use the GPT models, you must register at https://openai.com/. When creating an account for the first time, you will receive $5 in credit.\n - To obtain an API key from HuggingFace, you need to register at https://huggingface.co/ then go to 'Settings' and navigate to 'Access Tokens'."
