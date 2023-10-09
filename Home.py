@@ -12,8 +12,8 @@ language, index = ("English", 1) if flag is True else ("Español", 0)
 second_col.write(language)
 third_col.title(":book: StudySum AI")
 st.header(language_dictionary["header_main"][index])
-st.subheader("[PDFs](https://studysumai.streamlit.app/PDFs")
-st.subheader("[Youtube Videos](https://studysumai.streamlit.app/YoutubeVideos")
+st.subheader("[PDFs](https://studysumai.streamlit.app/PDFs)")
+st.subheader("[Youtube Videos](https://studysumai.streamlit.app/YoutubeVideos)")
 
 with st.expander("API Keys info :key:"):
     st.info(language_dictionary["api_text"][index])
