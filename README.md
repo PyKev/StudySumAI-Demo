@@ -25,7 +25,7 @@ This app offers two main functionalities:
 A 'Vector Store' acts as a database that stores vector representations of text, enabling similarity searches.
 
 ## Technologies Used 👨‍💻
-### Frameworks🛠 🛠️
+### Frameworks 🛠️
 - Langchain: A framework that simplifies the creation of applications using large language models (LLMs).
   - Used Chains: LLMChain, RetrievalQA, load_summarize_chain
   - Vector Store: FAISS
