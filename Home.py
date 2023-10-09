@@ -13,8 +13,7 @@ second_col.write(language)
 third_col.title(":book: StudySum AI")
 st.header(language_dictionary["header_main"][index])
 
-
-with st.expander("API Keys Info :key:"):
+with st.expander("API Keys info :key:"):
     st.info(language_dictionary["api_text"][index])
 
 with st.expander(language_dictionary["functionalities"][index]):
