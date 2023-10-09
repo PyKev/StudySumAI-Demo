@@ -30,6 +30,9 @@
     "yt_chat": ["Chatear con el video", "Chat with the video"],
     "success_indexing_yt": ["Video indexado! Ahora puedes chatear con el video",
         "Video indexed!, Now you can chat with the video!"],
+    "data_title": ["Chatea con tus archivos Excel o CSV", "Chat with your Excel or CSV files"],
+    "data_upload": ["Sube tu archivo", "Upload your file"],
+    "data_error": ["No se pudo cargar el archivo correctamente.", "Unable to load the file correctly"],
     "clean": ["Limpiar chat", "Clean chat"],
     "write_message": ["Escribe algo...", "Type something..."],
     "wait_message": ["Por favor espera..", "Please Wait..."],
@@ -56,8 +59,8 @@
     ],
     "consideration": ["Consideraciones :pushpin:", "Considerations :pushpin:"],
     "consideration_text": [
-        "- Se recomienda utilizar el modelo que mejor se adapte al número de tokens de tu archivo o video.\n- La aplicación está disponible en español e inglés, lo que significa que los resúmenes generados también estarán \nen el idioma que elijas.\n- El chatbot solo conserva la información de la última pregunta que le hagas.\n- Si deseas agregar más documentos después de utilizar la función de chat, asegúrate de eliminar los documentos previamente indexados y cargar los nuevos para evitar duplicaciones y no gastar créditos de manera innecesaria.\n- Si deseas chatear con más videos posteriormente, simplemente ingresa la URL del nuevo video y presiona \"Chatear\"; \n de esta manera el chatbot tendrá información de todos los videos que ingreses a partir de ese momento.\n",
-        "- It is recommended to use the model that best fits the number of tokens in your file or video.\n- The application is available in Spanish and English, which means that the generated summaries will also be\n in the language you choose.\n- The chatbot only retains information from the last question you ask it.\n- If you want to add more documents after using the chat function, make sure to delete the previously indexed documents and upload the new ones to avoid duplications and unnecessary credit usage.\n- If you want to chat with more videos later, simply enter the URL of the new video and press \"Chat\";\n this way, the chatbot will have information about all the videos you enter from that moment on.\n"
+        "- Se recomienda utilizar el modelo que mejor se adapte al número de tokens de tu archivo o video.\n- La aplicación está disponible en español e inglés, lo que significa que los resúmenes generados también estarán \nen el idioma que elijas.\n- El chatbot solo conserva la información de la última pregunta que le hagas, a excepción del chatbot de Excel/CSV que no tiene memoria implementada.\n- Si deseas agregar más documentos después de utilizar la función de chat, asegúrate de eliminar los documentos previamente indexados y cargar los nuevos para evitar duplicaciones y no gastar créditos de manera innecesaria.\n- Si deseas chatear con más videos posteriormente, simplemente ingresa la URL del nuevo video y presiona \"Chatear\"; \n de esta manera el chatbot tendrá información de todos los videos que ingreses a partir de ese momento.\n",
+        "- It is recommended to use the model that best fits the number of tokens in your file or video.\n- The application is available in Spanish and English, which means that the generated summaries will also be\n in the language you choose.\n- The chatbot only retains information from the last question you ask it, except for the Excel/CSV chatbot, which memory is not implemented..\n- If you want to add more documents after using the chat function, make sure to delete the previously indexed documents and upload the new ones to avoid duplications and unnecessary credit usage.\n- If you want to chat with more videos later, simply enter the URL of the new video and press \"Chat\";\n this way, the chatbot will have information about all the videos you enter from that moment on.\n"
     ],
     "limitations": ["Limitaciones :warning:", "Limitations :warning:"],
     "limitations_text": [

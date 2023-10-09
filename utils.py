@@ -6,6 +6,7 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.schema import Document
 import time
 from PyPDF2 import PdfReader
+import streamlit as st
 
 
 def extract_text(file) -> str:
@@ -29,28 +30,32 @@ def llm_choice(llm_name: str, key: str, mode: str):
 
     :param llm_name: Chosen model name
     :param key: OpenAI or HuggingFace key
-    :param mode: 'sum' for summarization task, 'chat' for chat task.
+    :param mode: 'sum' for summarization task, 'chat' for chat task, 'data' for Excel or CSV docs
     :return: Returns either the LLM alone or the LLM along with the context_length, depending on the mode. The chat task does not require the context_length since only summarization handles long text.
     """
-    models = {
-        "GPT-3.5-turbo-4k": ["gpt-3.5-turbo", 4097],
-        "GPT-3.5-turbo-16k": ["gpt-3.5-turbo-16k", 16385],
-        "Falcon-7b": ["tiiuae/falcon-7b-instruct", 1200]
-    }
-    temperature_gpt, temperature_hf = (0, 0.1) if mode == "sum" else (0.5, 0.5)
-    model_name = models[llm_name][0]
-    context_length = models[llm_name][1]
-    if model_name.startswith("gpt"):
-        llm = ChatOpenAI(temperature=temperature_gpt, model_name=model_name, openai_api_key=key)
-    else:
-        llm = HuggingFaceHub(
-            repo_id=model_name, model_kwargs={"temperature": temperature_hf, "max_new_tokens": 300},
-            huggingfacehub_api_token=key
-        )
-    if mode == "sum":
-        return llm, context_length
-    else:
-        return llm
+    try:
+        models = {
+            "GPT-3.5-turbo-4k": ["gpt-3.5-turbo", 4097],
+            "GPT-3.5-turbo-16k": ["gpt-3.5-turbo-16k", 16385],
+            "Falcon-7b": ["tiiuae/falcon-7b-instruct", 1200]
+        }
+        temperature_gpt, temperature_hf = (0, 0.1) if mode == "sum" or mode == "data" else (0.5, 0.5)
+        model_name = models[llm_name][0]
+        context_length = models[llm_name][1]
+        if model_name.startswith("gpt"):
+            llm = ChatOpenAI(temperature=temperature_gpt, model_name=model_name, openai_api_key=key)
+        else:
+            llm = HuggingFaceHub(
+                repo_id=model_name, model_kwargs={"temperature": temperature_hf, "max_new_tokens": 300},
+                huggingfacehub_api_token=key
+            )
+        if mode == "sum":
+            return llm, context_length
+        else:
+            return llm
+    except Exception as e:
+        st.error(str(e))
+        st.stop()
 
 
 map_prompt = """

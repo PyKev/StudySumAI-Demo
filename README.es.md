@@ -31,6 +31,7 @@ Un 'Vector Store' actúa como una base de datos que almacena representaciones ve
   - Vector Store: FAISS
   - Embeddings: text-embedding-ada-002
   - Memoria: ConversationBufferWindowMemory
+  - Agente: create_pandas_dataframe_agent
 
 - StreamLit: Framework de desarrollo de front-end que permite crear aplicaciones web interactivas de manera sencilla y rápida.
 ### Modelos 🤖
@@ -56,7 +57,7 @@ Cuando se sube un archivo, el sistema genera resúmenes y almacena temporalmente
 
 - La aplicación está disponible en español e inglés, lo que significa que los resúmenes generados estarán en el idioma que elijas.
 
-- El chatbot solo conserva la información de la última pregunta que le hagas.
+- El chatbot solo conserva la información de la última pregunta que le hagas, a excepción del chatbot de Excel/CSV que no tiene memoria implementada.
 
 - Si deseas agregar más documentos después de utilizar la función de chat, asegúrate de eliminar los documentos previamente indexados y cargar los nuevos para evitar duplicaciones y no gastar créditos innecesariamente.
 
