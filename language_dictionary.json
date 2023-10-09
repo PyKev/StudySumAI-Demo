@@ -1,0 +1,68 @@
+{
+    "title": ["Bienvenido a StudySum IA", "Welcome to StudySum AI"],
+    "subtitle": ["Puedes elegir entre resumir archivos o videos de Youtube",
+                 "You can choose between summarizing files or YouTube videos"],
+    "model_name": ["Elije tu modelo", "Choose your model"],
+    "doc_title": ["Documentos PDF 📄", "PDF Documents 📄"],
+    "doc_upload": ["Sube uno o varios archivos", "Upload one or more files"],
+    "doc_info_token": ["El archivo '{max_tokens_file}' tiene el máximo número de tokens - {max_tokens} tokens.",
+    "The file '{max_tokens_file}' has the maximum number of tokens - {max_tokens} tokens."],
+    "doc_no_files": ["Aquí se mostrará el archivo con el mayor número de tokens.",
+        "Here, the file with the highest number of tokens will be displayed."],
+    "doc_summary": ["Generar Resumen", "Generate Summary"],
+    "doc_type": ["Formato del resumen", "Summary document format"],
+    "doc_success": ["Documento generado. Haga clic en el botón de abajo para descargar el documento ",
+                    "Document generated. Click the button below to download the document"],
+    "doc_summary_name": ["Introduce un nombre para tu archivo resumen (Opcional)",
+                         "Enter a name for your summary file (Optional)"],
+    "doc_download": ["Descargar", "Download"],
+    "doc_chat": ["Chatear con tus documentos", "Chat with your documents"],
+    "success_indexing_doc": ["Archivos indexados! Ahora puedes chatear con tus pdfs",
+        "Files indexed! Now you can chat with your pdfs!"],
+    "yt_title": ["Videos de Youtube 🎥", "Youtube videos 🎥"],
+    "yt_summary": ["Resume el video de youtube", "Summary Youtube video"],
+    "yt_link_error": ["Aqui se mostrará el número de tokens del video",
+        "Here, the number of tokens in the video will be displayed."],
+    "yt_value_error": ["Ingresa un video válido", "Enter a valid video"],
+    "yt_token_message": ["La transcripción de este video tiene ", "The transcription of this video has "],
+    "yt_error": ["Hay un problema con este video, problamente no cuente con transcripción",
+        "There is a problem with this video, it probably doesn't have a transcript."],
+    "yt_chat": ["Chatear con el video", "Chat with the video"],
+    "success_indexing_yt": ["Video indexado! Ahora puedes chatear con el video",
+        "Video indexed!, Now you can chat with the video!"],
+    "clean": ["Limpiar chat", "Clean chat"],
+    "write_message": ["Escribe algo...", "Type something..."],
+    "wait_message": ["Por favor espera..", "Please Wait..."],
+    "api_error": ["Ingresa tu API key", "Enter your API key"],
+    "extra_features": ["Añade algunas caracteristicas que quisieras que tengan tus resumenes (Opcional)",
+        "Add some features you would like your summaries to have (Optional)"],
+    "features_example": ["Ejemplo: Nombra los puntos mas importantes en viñetas",
+        "Example: List the most important points in bullet points."],
+    "header_main": ["Resume y Chatea con tus PDFs y videos de YouTube 🤓",
+    "Summarize and Chat with your PDFs and YouTube videos 🤓"],
+    "api_text" : [
+        "Esta app funcionará solo si cuentas con una API key.\n - Para obtener una API key de OpenAI y poder hacer uso de los modelos GPT, debes registrarte en https://openai.com/ al crear una cuenta por primera vez obtendrás 5$ de crédito.\n - Para obtener una API key de HugginFace debes registrarte en https://huggingface.co/ luego ir a 'Settings' y dirigirte a 'Access Tokens'.",
+        "This app will only work if you have an API key.\n - To obtain an API key from OpenAI and be able to use the GPT models, you must register at https://openai.com/. When creating an account for the first time, you will receive $5 in credit.\n - To obtain an API key from HuggingFace, you need to register at https://huggingface.co/ then go to 'Settings' and navigate to 'Access Tokens'."
+    ],
+    "functionalities": ["Funcionalidades :hammer:", "Functionalities :hammer:"],
+    "funct_text": [
+        "Esta app tiene 2 funcionalidades principales, que puedes acceder a ellas en la barra de menú de la izquierda:\n 1. **PDFs**: Sube tus archivos, elige el modelo que desees y proporciona tu clave de API, una vez hecho esto, tendrás dos opciones:\n - **Resumir**: Crea un resumen descargable en PDF o Word con opciones de personalización.\n - **Chatear**: Indexa tus PDFs en un Vector Store y permite consultas mediante un chat.\n 2. **YoutubeVideos**: Coloca el link del video de YouTube, luego, elige el modelo que desees y proporciona tu clave de API, una vez hecho esto, tendrás dos opciones:\n - **Resumir**: Genera un resumen del video y lo muestra en la página como un texto.\n - **Chatear**: Indexa el video en el Vector Store y habilita el chat para consultas.\n\n Un 'Vector Store', es como una base de datos que almacena el texto de los documentos como representaciones de vectores, sirve para hacer consultas hacia estos mediante búsqueda de similitud.",
+        "This app has 2 main functionalities, which you can access in the left menu bar:\n 1. **PDFs**: Upload your files, choose the model you want, and provide your API key. Once done, you'll have two options:\n - **Summarize**: Create a downloadable summary in PDF or Word with customization options.\n - **Chat**: Index your PDFs in a Vector Store and enable queries through a chat.\n 2. **Youtube Videos**: Paste the YouTube video link, then choose the desired model and provide your API key. Once done, you'll have two options:\n - **Summarize**: Generate a summary of the video and display it on the page as text.\n - **Chat**: Index the video in the Vector Store and enable chat for queries.\n\n A 'Vector Store' is like a database that stores document text as vector representations, used for querying them through similarity search."
+    ],
+    "models": ["Modelos :robot_face:", "Models :robot_face:"],
+    "model_text": [
+        "En este proyecto se están utilizando dos modelos de lenguaje (LLM).\n - La primera opción es GPT-3.5 Turbo, que tiene dos variantes: una con un límite de 4096 tokens y otra con un límite de 16,384 tokens. Los tokens son unidades individuales de palabras o caracteres utilizados en el procesamiento de texto. Puedes seleccionar el modelo en función del número de tokens que requiere tu texto, la app te irá mostrando cual de los archivos que has subido tiene el mayor número de tokens para que decidas mejor. \n - La segunda opción es el modelo Falcon-7b, que es gratuito usando tu API key de Hugging Face. Sin embargo, este modelo acepta menos tokens y funciona mejor para resumir textos más pequeños, generalmente alrededor de 1200 tokens.\n\n Cuando un texto excede el límite de tokens permitido, el código divide el texto en partes más pequeñas y luego genera un resumen de los resumenes, utilizando la técnica de map_reduce. Esta técnica funciona mejor con los modelos GPT en comparación con Falcon, ya que este último tiende a generar resúmenes de baja calidad cuando se enfrenta a textos largos. Por lo tanto, se recomienda usar el modelo GPT-3.5 Turbo de 16k tokens para obtener mejores resultados en textos extensos\n\n El modelo GPT-4 acepta 32k tokens sin embargo no ha sido incluido en este proyecto por ahora.",
+        "In this project, two language models (LMs) are being used.\n - The first option is GPT-3.5 Turbo, which has two variants: one with a 4096-token limit and another with a 16,384-token limit. Tokens are individual units of words or characters used in text processing. You can select the model based on the number of tokens your text requires; the app will show you which of the uploaded files has the highest token count to help you make a better decision.\n - The second option is the Falcon-7b model, which is free to use with your Hugging Face API key. However, this model accepts fewer tokens and works better for summarizing smaller texts, typically around 1200 tokens.\n\n When a text exceeds the allowed token limit, the code divides the text into smaller parts and then generates a summary of the summaries using the map_reduce technique. This technique works better with GPT models compared to Falcon, as the latter tends to produce low-quality summaries when faced with long texts. Therefore, it is recommended to use the 16k-token GPT-3.5 Turbo model to achieve better results with extensive texts.\n\n GPT-4 model accepts 32k tokens; however, it has not been included in this project for now."
+    ],
+    "consideration": ["Consideraciones :pushpin:", "Considerations :pushpin:"],
+    "consideration_text": [
+        "- Se recomienda utilizar el modelo que mejor se adapte al número de tokens de tu archivo o video.\n- La aplicación está disponible en español e inglés, lo que significa que los resúmenes generados también estarán \nen el idioma que elijas.\n- El chatbot solo conserva la información de la última pregunta que le hagas.\n- Si deseas agregar más documentos después de utilizar la función de chat, asegúrate de eliminar los documentos previamente indexados y cargar los nuevos para evitar duplicaciones y no gastar créditos de manera innecesaria.\n- Si deseas chatear con más videos posteriormente, simplemente ingresa la URL del nuevo video y presiona \"Chatear\"; \n de esta manera el chatbot tendrá información de todos los videos que ingreses a partir de ese momento.\n",
+        "- It is recommended to use the model that best fits the number of tokens in your file or video.\n- The application is available in Spanish and English, which means that the generated summaries will also be\n in the language you choose.\n- The chatbot only retains information from the last question you ask it.\n- If you want to add more documents after using the chat function, make sure to delete the previously indexed documents and upload the new ones to avoid duplications and unnecessary credit usage.\n- If you want to chat with more videos later, simply enter the URL of the new video and press \"Chat\";\n this way, the chatbot will have information about all the videos you enter from that moment on.\n"
+    ],
+    "limitations": ["Limitaciones :warning:", "Limitations :warning:"],
+    "limitations_text": [
+        "- Para que el chat funcione correctamente, es necesario ingresar tu clave de OpenAI, ya que los embeddings se generan mediante el modelo 'text-embedding-ada-002'. Existe la alternativa gratuita 'HuggingFaceInstructEmbeddings', \npero su procesamiento es más lento, requiere una mayor cantidad de recursos y no se ha agregado a este proyecto.\n- Ten en cuenta que pueden surgir errores de procesamiento si el texto es demasiado extenso y se elige un modelo con un límite bajo de tokens.",
+        "- To make the chat work correctly, it's necessary to input your OpenAI key, as embeddings are generated using the 'text-embedding-ada-002' model. There's a free alternative 'HuggingFaceInstructEmbeddings', but its processing is slower, requires more resources and it is not yet implemented in this project.\n- Keep in mind that processing errors may occur if the text is too extensive and a model with a low token limit is chosen."
+    ],
+    "contact": ["Contacto", "Contact"]
+}
