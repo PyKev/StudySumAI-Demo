@@ -13,7 +13,7 @@ import streamlit as st
 
 prompt = PromptTemplate(
     input_variables=["lang", "matter", "text", "features"],
-    template="Write a detailed easy to understand summary {lang} of the following: {matter}. {features}: {text}",
+    template="Write a detailed easy to understand summary {lang} of the following {matter}. {features}: {text}",
 )
 
 
