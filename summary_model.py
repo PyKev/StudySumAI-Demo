@@ -146,7 +146,7 @@ def youtube_summarization(yt_transcript: str, llm_name: str, key: str, lang: str
     :param lang: Chosen language
     :return: Summary of the YouTube video
     """
-    matter = "data about a youtube video transcription"
+    matter = "youtube video transcription, Begin your summary with the phrase 'This video is about ...', here is the youtube video transcription"
     llm, context_length = llm_choice(llm_name, key, "sum")
     if llm.get_num_tokens(yt_transcript) >= context_length:
         long_response_yt = handle_long_text(llm, context_length, yt_transcript, lang, matter, "")
