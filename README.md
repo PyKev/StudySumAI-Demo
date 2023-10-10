@@ -1,4 +1,4 @@
-# StudySum AI - Summaries and Chat with PDFs and YouTube Videos 📚
+# StudySum AI - Summaries and Chat with PDFs, Excel/CSV and YouTube Videos 📚
 
 This application allows you to summarize and chat with your PDF documents and YouTube videos. To make the most of this application, you need an API key from OpenAI and, optionally, an API key from HuggingFace. Here's how to get them:
 
@@ -41,7 +41,7 @@ This project uses two language models (LLMs) to process content:
 
 1. **GPT-3.5 Turbo:** Offers two variants with token limits of 4096 and 16,384. You can choose the model based on your text's length. The application will show you which of your files has the highest number of tokens to help you decide.
 
-2. **Falcon-7b:** This model is free with your HuggingFace API key but has a lower token limit, ideal for summarizing shorter texts, usually around 1200 tokens.
+2. **Falcon-7b:** This model is free with your HuggingFace API key but has a lower token limit, it doesn't work as well as GPT and it yields regular results with texts of around 1200 tokens.
 
 When a text exceeds the allowed token limit, the code divides the content into smaller parts and generates summaries of the summaries using the map_reduce technique. It is recommended to use the 16k token GPT-3.5 Turbo model for better results on longer texts.
 

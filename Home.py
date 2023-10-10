@@ -13,22 +13,32 @@ second_col.write(language)
 third_col.title(":book: StudySum AI")
 st.header(language_dictionary["header_main"][index])
 
-with st.expander("API Keys info :key:"):
+st.info(language_dictionary["api_header_text"][index])
+
+col1, col2 = st.columns([0.35, 0.65])
+with col1.expander("#### [PDFs](https://studysumai.streamlit.app/PDFs)"):
+    st.write(language_dictionary["pdf_text"][index])
+
+with col2.expander("#### [Excel/CSV](https://studysumai.streamlit.app/Excel-CSV)"):
+    st.write(language_dictionary["data_text"][index])
+
+with col2.expander("#### [YouTube Videos](https://studysumai.streamlit.app/YoutubeVideos)"):
+    st.write(language_dictionary["yt_text"][index])
+
+with st.expander("API Keys Info :key:"):
     st.info(language_dictionary["api_text"][index])
-
-with st.expander(language_dictionary["functionalities"][index]):
-    st.info(language_dictionary["funct_text"][index])
-
-with st.expander(language_dictionary["models"][index]):
-    st.info(language_dictionary["model_text"][index])
 
 with st.expander(language_dictionary["consideration"][index]):
     st.info(language_dictionary["consideration_text"][index])
+
+with st.expander(language_dictionary["models"][index]):
+    st.info(language_dictionary["model_text"][index])
 
 with st.expander(language_dictionary["limitations"][index]):
     st.warning(language_dictionary["limitations_text"][index])
 
 
 st.sidebar.info(f"""{language_dictionary["contact"][index]}:            
+- [LinkedIn](https://www.linkedin.com/in/kevinchavez24/)
 - [GitHub](https://github.com/KevChvz)
-- [LinkedIn](https://www.linkedin.com/in/kevinchavez24/)""")
+""")
