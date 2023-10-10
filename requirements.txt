@@ -10,7 +10,6 @@ tiktoken==0.5.1
 faiss-cpu==1.7.4
 fonttools==4.42.1
 huggingface-hub==0.17.3
-langsmith==0.0.41
 json5==0.9.14
 jsonpatch==1.33
 jsonpointer==2.4
