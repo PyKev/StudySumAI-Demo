@@ -4,7 +4,7 @@ import time
 from chat_model import get_response, ingest
 import datetime
 import json
-import tiktoken
+
 from utils import llm_choice
 
 with open("language_dictionary.json", "r", encoding="utf-8") as archivo:

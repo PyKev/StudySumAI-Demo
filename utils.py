@@ -5,7 +5,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
 from langchain.schema import Document
 import time
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 import streamlit as st
 
 

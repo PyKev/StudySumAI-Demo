@@ -3,7 +3,6 @@ from summary_model import youtube_summarization, get_youtube_transcript
 import time
 from chat_model import get_response, ingest
 import json
-import tiktoken
 from utils import llm_choice
 
 with open("language_dictionary.json", "r", encoding="utf-8") as archivo:
