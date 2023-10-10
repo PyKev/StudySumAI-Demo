@@ -40,18 +40,22 @@ Un 'Vector Store' actúa como una base de datos que almacena representaciones ve
 - StreamLit: Framework de desarrollo de front-end que permite crear aplicaciones web interactivas de manera sencilla y rápida.
 ### Modelos 🤖
 
-Este proyecto utiliza dos modelos de lenguaje (LLM) para procesar el contenido:
+Este proyecto utiliza 3 modelos de lenguaje grandes (LLMs) para procesar contenido:
 
-1. **GPT-3.5 Turbo:** Ofrece dos variantes con límites de 4096 y 16,384 tokens. Puedes elegir el modelo en función de la longitud de tu texto. La aplicación te mostrará cuál de tus archivos tiene el mayor número de tokens para ayudarte a decidir.
+1. Modelo de pago: Requiere una clave de API de OpenAI.
+   - **GPT-3.5 Turbo:** Ofrece los mejores resultados, cuenta con dos variantes con límites de tokens de 4096 y 16,384. Puedes elegir el modelo según la longitud de tu texto.
 
-2. **Falcon-7b:** Este modelo es gratuito con tu API key de HuggingFace, pero tiene un límite de tokens más bajo, no funciona tan bien como GPT y da resultados regulares con textos de alrededor 1200 tokens.
+2. Modelos de código abierto: Requieren una clave de API de HuggingFace.
+   - **Mistral-7b-Instruct:** Considerado el mejor modelo de 7B hasta la fecha, proporciona respuestas aceptables, pero no alcanza el nivel de GPT, aunque tiene un limite de 8000 tokens.
+   - **Falcon-7b-Instruct:** Tiene un límite de tokens más bajo, no funciona tan bien como GPT y Mistral, además proporciona resultados regulares con textos de alrededor de 1200 tokens.
 
-Cuando un texto supera el límite de tokens permitido, el código divide el contenido en partes más pequeñas y genera un resumen de los resúmenes utilizando la técnica de map_reduce. Se recomienda utilizar el modelo GPT-3.5 Turbo de 16k tokens para obtener mejores resultados en textos extensos.
+- La aplicación te mostrará cuál de tus archivos tiene el mayor número de tokens para ayudarte a decidir que modelo usar.
+- Cuando un texto supera el límite de tokens permitido, el código divide el contenido en partes más pequeñas y genera un resumen de los resúmenes utilizando la técnica de map_reduce. Se recomienda utilizar el modelo GPT-3.5 Turbo de 16k tokens para obtener mejores resultados en textos extensos.
 
 ### Generación y manipulación de documentos 📄
 Cuando se sube un archivo, el sistema genera resúmenes y almacena temporalmente los documentos resultantes en búferes que se cierran y pierden su valor después de haberlos descargado.
 
-- PyPDF y PyPDF2: Para la extracción del texto del PDF.
+- PyPDF: Para la extracción del texto del PDF.
 - ReportLab: Para generar documentos PDF.
 - Python-docx: Para generar documentos Word.
 
@@ -69,5 +73,6 @@ Cuando se sube un archivo, el sistema genera resúmenes y almacena temporalmente
 
 ## Limitaciones ⚠️
 
-- Para que el chat funcione correctamente, es necesario ingresar tu clave de OpenAI, ya que los embeddings se generan mediante el modelo 'text-embedding-ada-002'. Existe la alternativa gratuita 'HuggingFaceInstructEmbeddings', pero su procesamiento es más lento, requiere una mayor cantidad de recursos y no se ha agregado a este proyecto. 
+- Para que el chat funcione correctamente, es necesario ingresar tu clave de OpenAI, ya que los embeddings se generan mediante el modelo 'text-embedding-ada-002'. Existe la alternativa gratuita 'HuggingFaceInstructEmbeddings', pero su procesamiento es más lento, requiere una mayor cantidad de recursos y no se ha agregado a este proyecto.
+  - Si bien el proceso de indexación se realiza con una clave de API de OpenAI, una vez indexado, puedes utilizar un modelo de código abierto para obtener respuestas.
 - Ten en cuenta que pueden surgir errores de procesamiento si el texto es demasiado extenso y se elige un modelo con un límite bajo de tokens.

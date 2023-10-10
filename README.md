@@ -40,18 +40,22 @@ A 'Vector Store' acts as a database that stores vector representations of text, 
 
 ### Models 🤖
 
-This project uses two language models (LLMs) to process content:
+This project uses 3 large language models (LLMs) to process content:
 
-1. **GPT-3.5 Turbo:** Offers two variants with token limits of 4096 and 16,384. You can choose the model based on your text's length. The application will show you which of your files has the highest number of tokens to help you decide.
+1. Paid model: Requires an OpenAI API key.
+   - **GPT-3.5 Turbo:** Provides the best results and offers two variants with token limits of 4096 and 16,384. You can choose the model based on the length of your text.
 
-2. **Falcon-7b:** This model is free with your HuggingFace API key but has a lower token limit, it doesn't work as well as GPT and it yields regular results with texts of around 1200 tokens.
+2. Open-source models: Require a HuggingFace API key.
+   - **Mistral-7b-Instruct:** Considered the best 7B model to date, it provides acceptable answers but doesn't reach the level of GPT, although it has an 8,000-token limit.
+   - **Falcon-7b-Instruct:** Has a lower token limit, doesn't perform as well as GPT and Mistral, and provides regular results with texts around 1,200 tokens.
 
-When a text exceeds the allowed token limit, the code divides the content into smaller parts and generates summaries of the summaries using the map_reduce technique. It is recommended to use the 16k token GPT-3.5 Turbo model for better results on longer texts.
+- The app will show you which of your files has the highest number of tokens to help you decide which model to use.
+- When a text exceeds the allowed token limit, the code divides the content into smaller parts and generates summaries of the summaries using the map_reduce technique. It is recommended to use the GPT-3.5 Turbo 16k token model for better results with extensive texts.
 
 ### Document Generation and Manipulation 📄
 When a file is uploaded, the system generates summaries and temporarily stores the resulting documents in buffers that are closed and lose their value after downloading.
 
-- PyPDF and PyPDF2: For text extraction from PDFs.
+- PyPDF: For text extraction from PDFs.
 - ReportLab: For generating PDF documents.
 - Python-docx: For generating Word documents.
 
@@ -69,4 +73,6 @@ When a file is uploaded, the system generates summaries and temporarily stores t
 
 ## Limitations ⚠️
 
-- To make the chat work correctly, it is necessary to input your OpenAI key since embeddings are generated using the 'text-embedding-ada-002' model. There is a free alternative, 'HuggingFaceInstructEmbeddings,' but it processes more slowly, requires more resources, and has not been added to this project.
+- To make the chat work correctly, it is necessary to input your OpenAI key since embeddings are generated using the 'text-embedding-ada-002' model. There is a free alternative, 'HuggingFaceInstructEmbeddings,' but it processes more slowly, requires more resources, and has not been added to this project. 
+  - While the indexing process is done with an OpenAI API key, once indexed, you can use an open-source model to obtain responses.
+- Please note that processing errors may occur if the text is too lengthy and a model with a low token limit is selected.
