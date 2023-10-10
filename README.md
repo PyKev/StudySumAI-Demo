@@ -8,7 +8,7 @@ This application allows you to summarize and chat with your PDF documents and Yo
 
 ## Features 🔧
 
-This app offers two main functionalities:
+This app offers three main functionalities:
 
 ### PDFs:
 
@@ -22,6 +22,9 @@ This app offers two main functionalities:
 
 2. **Chat:** Index the video in the Vector Store and enable chat to make queries related to the video's content.
 
+### Excel/CSV:
+1. **Chat:** Upload your file and it will enable a chat so you can make questions about it.
+   
 A 'Vector Store' acts as a database that stores vector representations of text, enabling similarity searches.
 
 ## Technologies Used 👨‍💻
