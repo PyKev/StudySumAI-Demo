@@ -22,6 +22,10 @@ Esta app ofrece dos funcionalidades principales:
 
 2. **Chatear:** Indexa el video en el Vector Store y habilita el chat para realizar consultas relacionadas con el contenido del video.
 
+### Excel/CSV:
+
+1. **Chatear:** Sube tu archivo y habilitará un chat para que puedas hacer preguntas sobre él
+   
 Un 'Vector Store' actúa como una base de datos que almacena representaciones vectoriales de texto, lo que permite realizar búsquedas de similitud.
 
 ## Tecnologías usadas 👨‍💻:
