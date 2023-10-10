@@ -98,7 +98,7 @@ def handle_long_text(llm, context_length: int, text: str, lang: str, matter: str
         chunk_summary = map_chain.run({'text': [doc], 'matter': matter, 'lang': lang,
                                        'input_documents': [doc], 'features': features})
         if (index + 1) % 3 == 0:
-            if context_length != 1200:
+            if context_length not in (1200, 8000):
                 time.sleep(61)
         summary_list.append(chunk_summary)
     summaries = "\n".join(summary_list)
