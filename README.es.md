@@ -24,7 +24,7 @@ Esta app ofrece dos funcionalidades principales:
 
 ### Excel/CSV:
 
-1. **Chatear:** Sube tu archivo y habilitará un chat para que puedas hacer preguntas sobre él
+1. **Chatear:** Sube tu archivo y habilitará un chat para que puedas hacer preguntas sobre él.
    
 Un 'Vector Store' actúa como una base de datos que almacena representaciones vectoriales de texto, lo que permite realizar búsquedas de similitud.
 
