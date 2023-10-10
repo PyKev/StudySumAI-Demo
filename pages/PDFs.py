@@ -5,6 +5,8 @@ from chat_model import get_response, ingest
 import datetime
 import json
 import tiktoken
+from utils import llm_choice
+
 with open("language_dictionary.json", "r", encoding="utf-8") as archivo:
     language_dictionary = json.load(archivo)
 
@@ -19,11 +21,14 @@ third_col.title(language_dictionary["doc_title"][index])
 
 # Setting model and api key options
 model_name = st.sidebar.selectbox(language_dictionary["model_name"][index],
-                                  ('GPT-3.5-turbo-16k', 'GPT-3.5-turbo-4k', 'Falcon-7b'))
+                                  ('GPT-3.5-turbo-16k', 'GPT-3.5-turbo-4k', 'Mistral-7b' ,'Falcon-7b'))
+
 if model_name.startswith("GPT"):
     key = st.sidebar.text_input("OpenAI API Key:", placeholder="sk-XXXXXXXXXXXXXXX", type='password')
 else:
     key = st.sidebar.text_input("Hugging Face API Key:", placeholder="hf_XXXXXXXXXXXXXXX", type='password')
+
+llm = llm_choice(model_name, "api_key", 'llm')
 
 uploaded_files = st.file_uploader(language_dictionary["doc_upload"][index], accept_multiple_files=True, type=["pdf"])
 disabled_state = False if uploaded_files else True
@@ -33,11 +38,11 @@ max_tokens = 0
 max_tokens_file = ""
 for file in uploaded_files:
     text_file = extract_text(file)
-    encoding = tiktoken.get_encoding("cl100k_base")
-    num_tokens = len(encoding.encode(text_file))
+    num_tokens = llm.get_num_tokens(text_file)
     if num_tokens > max_tokens:
         max_tokens = num_tokens
         max_tokens_file = file.name
+
 if max_tokens_file:
     st.info(language_dictionary["doc_info_token"][index].format(max_tokens_file=max_tokens_file, max_tokens=max_tokens))
 else:

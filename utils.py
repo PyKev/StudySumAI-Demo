@@ -30,13 +30,14 @@ def llm_choice(llm_name: str, key: str, mode: str):
 
     :param llm_name: Chosen model name
     :param key: OpenAI or HuggingFace key
-    :param mode: 'sum' for summarization task, 'chat' for chat task, 'data' for Excel or CSV docs
+    :param mode: 'sum' for summarization task, 'chat' for chat task, 'data' for Excel or CSV docs, 'llm' for only llm
     :return: Returns either the LLM alone or the LLM along with the context_length, depending on the mode. The chat task does not require the context_length since only summarization handles long text.
     """
     try:
         models = {
             "GPT-3.5-turbo-4k": ["gpt-3.5-turbo", 4097],
             "GPT-3.5-turbo-16k": ["gpt-3.5-turbo-16k", 16385],
+            "Mistral-7b": ["mistralai/Mistral-7B-Instruct-v0.1", 8000],
             "Falcon-7b": ["tiiuae/falcon-7b-instruct", 1200]
         }
         temperature_gpt, temperature_hf = (0, 0.1) if mode == "sum" or mode == "data" else (0.5, 0.5)

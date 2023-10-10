@@ -16,13 +16,13 @@ st.header(language_dictionary["header_main"][index])
 st.info(language_dictionary["api_header_text"][index])
 
 col1, col2 = st.columns([0.35, 0.65])
-with col1.expander("#### [PDFs](https://studysumai.streamlit.app/PDFs)"):
+with col1.expander("#### [PDFs](https://studysumai.streamlit.app/PDFs)", expanded=True):
     st.write(language_dictionary["pdf_text"][index])
 
-with col2.expander("#### [Excel/CSV](https://studysumai.streamlit.app/Excel-CSV)"):
+with col2.expander("#### [Excel/CSV](https://studysumai.streamlit.app/Excel-CSV)", expanded=True):
     st.write(language_dictionary["data_text"][index])
 
-with col2.expander("#### [YouTube Videos](https://studysumai.streamlit.app/YoutubeVideos)"):
+with col2.expander("#### [YouTube Videos](https://studysumai.streamlit.app/YoutubeVideos)", expanded=True):
     st.write(language_dictionary["yt_text"][index])
 
 with st.expander("API Keys Info :key:"):
