@@ -17,7 +17,7 @@ prompt = PromptTemplate(
     template="""
     Write a detailed easy to understand summary {lang} of the {matter} enclosed in triple backticks.
     Additional summary features: {features}
-    Note: The additional features might be in Spanish or be empty, as they are part of user input. 
+    Note: The additional features might be in spanish or be empty, as they are part of user input. 
     Please take them into account and incorporate those features into your summary. 
     ```
     {text}

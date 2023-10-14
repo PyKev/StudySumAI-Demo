@@ -61,13 +61,16 @@ def llm_choice(llm_name: str, key: str, mode: str):
 
 map_prompt = """
 You will be given a single part of a {matter}. This section will be enclosed in triple backticks (```)
-Your goal is to write a very short easy to understand summary {lang}.{features}
+Your goal is to write a very short easy to understand summary {lang}.
 ```{text}```
 """
 
 combine_prompt = """
 You will be given a series of summaries of a {matter}. The summaries will be enclosed in triple backticks (```)
-Your goal is to write a detailed easy to understand summary of the summaries {lang}.{features}
+Your goal is to write a detailed easy to understand summary of the summaries {lang}.
+Additional summary features: {features}
+Note: The additional features might be in spanish or be empty, as they are part of user input. 
+Please take them into account and incorporate those features into your summary. 
 ```{text}```
 """
 
@@ -87,16 +90,15 @@ def handle_long_text(llm, context_length: int, text: str, lang: str, matter: str
     :param features: Additional features for the summaries
     :return: Summary of the summaries of the large PDF document
     """
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=context_length*3.5)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=context_length*3.3)
     docs = text_splitter.create_documents([text])
-    map_prompt_template = PromptTemplate(template=map_prompt, input_variables=["text", "lang", "matter", "features"])
+    map_prompt_template = PromptTemplate(template=map_prompt, input_variables=["text", "lang", "matter"])
     combine_prompt_template = PromptTemplate(template=combine_prompt,
                                              input_variables=["lang", "matter", "text", "features"])
     map_chain = load_summarize_chain(llm=llm, chain_type="stuff", prompt=map_prompt_template)
     summary_list = []
     for index, doc in enumerate(docs):
-        chunk_summary = map_chain.run({'text': [doc], 'matter': matter, 'lang': lang,
-                                       'input_documents': [doc], 'features': features})
+        chunk_summary = map_chain.run({'text': [doc], 'matter': matter, 'lang': lang, 'input_documents': [doc]})
         if (index + 1) % 3 == 0:
             if context_length not in (1200, 8000):
                 time.sleep(61)

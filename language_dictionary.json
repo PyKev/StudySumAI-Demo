@@ -41,7 +41,7 @@
     "api_error": ["Ingresa tu API key", "Enter your API key"],
     "extra_features": ["Añade algunas caracteristicas que quisieras que tengan tus resumenes (Opcional)",
         "Add some features you would like your summaries to have (Optional)"],
-    "features_example": ["Ejemplo: Lista los puntos mas importantes con guiones",
+    "features_example": ["Ejemplo: Lista los puntos mas importantes en guiones",
         "Example: List the most important points in bullet points."],
     "header_main": ["Resume y Chatea con tus PDFs, Excel/CSV y Videos de YouTube",
     "Summarize and Chat with your PDFs, Excel/CSV and YouTube Videos"],
