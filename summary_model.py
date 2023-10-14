@@ -14,7 +14,7 @@ import streamlit as st
 prompt = PromptTemplate(
     input_variables=["lang", "matter", "text", "features"],
     template="""
-    Write a detailed easy to understand summary {lang} of the {matter} enclosed in triple backticks. {features}: 
+    Write a detailed easy to understand summary {lang} ({features}) of the {matter} enclosed in triple backticks: 
     ```
     {text}
     '''
