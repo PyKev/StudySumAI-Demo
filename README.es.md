@@ -4,7 +4,7 @@ Esta aplicación te permite resumir y chatear con tus documentos PDF y videos de
 
 - **API key de OpenAI:** Regístrate en [OpenAI](https://openai.com/) para obtener una API key. Al crear tu cuenta por primera vez, recibirás $5 de crédito.
 
-- **API key de HuggingFace:** Regístrate en [HuggingFace](https://huggingface.co/), ve a 'Settings' y luego a 'Access Tokens' para obtener tu clave.
+- **Access Token de HuggingFace:** Regístrate en [HuggingFace](https://huggingface.co/), ve a 'Settings' y luego a 'Access Tokens' para obtener tu clave.
 
 ## Funcionalidades 🔧
 
@@ -45,7 +45,7 @@ Este proyecto utiliza 3 modelos de lenguaje grandes (LLMs) para procesar conteni
 1. Modelo de pago: Requiere una clave de API de OpenAI.
    - **GPT-3.5 Turbo:** Ofrece los mejores resultados, cuenta con dos variantes con límites de tokens de 4096 y 16,384. Puedes elegir el modelo según la longitud de tu texto.
 
-2. Modelos de código abierto: Requieren una clave de API de HuggingFace.
+2. Modelos de código abierto: Requieren un Access Token de HuggingFace.
    - **Mistral-7b-Instruct:** Considerado el mejor modelo de 7B hasta la fecha, proporciona respuestas aceptables, pero no alcanza el nivel de GPT, aunque tiene un limite de 8000 tokens.
    - **Falcon-7b-Instruct:** Tiene un límite de tokens más bajo, no funciona tan bien como GPT y Mistral, además proporciona resultados regulares con textos de alrededor de 1200 tokens.
 
