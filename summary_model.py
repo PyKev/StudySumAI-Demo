@@ -11,10 +11,14 @@ from docx import Document
 import io
 import streamlit as st
 
+
 prompt = PromptTemplate(
     input_variables=["lang", "matter", "text", "features"],
     template="""
-    Write a detailed easy to understand summary {lang} ({features}) of the {matter} enclosed in triple backticks: 
+    Write a detailed easy to understand summary {lang} of the {matter} enclosed in triple backticks.
+    Additional summary features: {features}
+    Note: The additional features might be in Spanish or be empty, as they are part of user input. 
+    Please take them into account and incorporate those features into your summary. 
     ```
     {text}
     '''
