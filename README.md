@@ -1,10 +1,10 @@
 # StudySum AI - Summaries and Chat with PDFs, Excel/CSV and YouTube Videos 📚
 
-This application allows you to summarize and chat with your PDF documents and YouTube videos. To make the most of this application, you need an API key from OpenAI and, optionally, an API key from HuggingFace. Here's how to get them:
+This application allows you to summarize and chat with your PDF documents and YouTube videos. To make the most of this application, you need an API key from OpenAI and, optionally, an Access Token from HuggingFace. Here's how to get them:
 
 - **OpenAI API Key:** Sign up on [OpenAI](https://openai.com/) to get an API key. When creating your account for the first time, you will receive $5 in credit.
 
-- **HuggingFace API Key:** Sign up on [HuggingFace](https://huggingface.co/), go to 'Settings,' and then 'Access Tokens' to obtain your key.
+- **HuggingFace Access Token:** Sign up on [HuggingFace](https://huggingface.co/), go to 'Settings,' and then 'Access Tokens' to obtain your token.
 
 ## Features 🔧
 
@@ -45,7 +45,7 @@ This project uses 3 large language models (LLMs) to process content:
 1. Paid model: Requires an OpenAI API key.
    - **GPT-3.5 Turbo:** Provides the best results and offers two variants with token limits of 4096 and 16,384. You can choose the model based on the length of your text.
 
-2. Open-source models: Require a HuggingFace API key.
+2. Open-source models: Require a HuggingFace Access Token.
    - **Mistral-7b-Instruct:** Considered the best 7B model to date, it provides acceptable answers but doesn't reach the level of GPT, although it has an 8,000-token limit.
    - **Falcon-7b-Instruct:** Has a lower token limit, doesn't perform as well as GPT and Mistral, and provides regular results with texts around 1,200 tokens.
 
