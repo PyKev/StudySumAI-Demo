@@ -13,7 +13,12 @@ import streamlit as st
 
 prompt = PromptTemplate(
     input_variables=["lang", "matter", "text", "features"],
-    template="Write a detailed easy to understand summary {lang} of the following {matter}. {features}: {text}",
+    template="""
+    Write a detailed easy to understand summary {lang} of the {matter} enclosed in triple backticks. {features}: 
+    ```
+    {text}
+    '''
+    """
 )
 
 
@@ -146,12 +151,13 @@ def youtube_summarization(yt_transcript: str, llm_name: str, key: str, lang: str
     :param lang: Chosen language
     :return: Summary of the YouTube video
     """
-    matter = "youtube video transcription, provides a concise summary of the video's key points, main ideas, and relevant information, here is the youtube video transcription"
+    matter = "youtube video transcription" 
+    yt_features = "Provide a concise summary of the video's key points, main ideas, and relevant information"
     llm, context_length = llm_choice(llm_name, key, "sum")
     if llm.get_num_tokens(yt_transcript) >= context_length:
-        long_response_yt = handle_long_text(llm, context_length, yt_transcript, lang, matter, "")
+        long_response_yt = handle_long_text(llm, context_length, yt_transcript, lang, matter, yt_features)
         return long_response_yt
     else:
         chain = LLMChain(llm=llm, prompt=prompt)
-        yt_response = chain.run({'lang': lang, 'matter': matter, 'text': yt_transcript, 'features': ''})
+        yt_response = chain.run({'lang': lang, 'matter': matter, 'text': yt_transcript, 'features': yt_features})
         return yt_response
