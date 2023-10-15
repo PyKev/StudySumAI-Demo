@@ -8,7 +8,7 @@ st.set_page_config(page_title="StudySum AI", page_icon=":book:", initial_sidebar
 
 first_col, second_col, third_col = st.columns([0.05, 0.15, 0.8])
 flag = first_col.toggle(' ')
-language, index = ("English", 1) if flag is True else ("Español", 0)
+language, index = ("English", 1) if flag is False else ("Español", 0)
 second_col.write(language)
 third_col.title(":book: StudySum AI")
 st.header(language_dictionary["header_main"][index])
