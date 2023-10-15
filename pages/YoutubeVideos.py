@@ -13,7 +13,7 @@ st.set_page_config(page_title="StudySum AI", page_icon=":book:", initial_sidebar
 # Header
 first_col, second_col, third_col = st.columns([0.05, 0.15, 0.9])
 flag = first_col.toggle(' ')
-language, index = ("English", 1) if flag is True else ("Español", 0)
+language, index = ("English", 1) if flag is False else ("Español", 0)
 language_translated = "in Spanish" if language == "Español" else "in English"
 second_col.write(language)
 third_col.title(language_dictionary["yt_title"][index])
