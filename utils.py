@@ -26,7 +26,7 @@ def extract_text(file) -> str:
 
 def llm_choice(llm_name: str, key: str, mode: str):
     """
-    Chooses the LLM model, available models: 'GPT-3.5-turbo-4k', 'GPT-3.5-turbo-16k', 'Falcon-7b'
+    Chooses the LLM model, available models: 'GPT-3.5-turbo-4k', 'GPT-3.5-turbo-16k', 'Mistral-7b', 'Falcon-7b'
 
     :param llm_name: Chosen model name
     :param key: OpenAI or HuggingFace key
