@@ -1,6 +1,6 @@
 # StudySum AI - Resúmenes y Chat con PDFs, Excel/CSV y Videos de YouTube 📚
 
-Esta aplicación te permite resumir y chatear con tus documentos PDF y videos de YouTube. Para aprovechar al máximo esta aplicación, necesitas una API key de OpenAI y, opcionalmente, un Access Token de HuggingFace. Aquí te muestro cómo obtenerlas:
+Esta aplicación te permite resumir y chatear con tus documentos PDF, videos de YouTube y archivos Excel/CSV. Para aprovechar al máximo esta aplicación, necesitas una API key de OpenAI y, opcionalmente, un Access Token de HuggingFace. Aquí te muestro cómo obtenerlas:
 
 - **API key de OpenAI:** Regístrate en [OpenAI](https://openai.com/) para obtener una API key. Al crear tu cuenta por primera vez, recibirás $5 de crédito.
 
