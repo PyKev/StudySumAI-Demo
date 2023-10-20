@@ -1,6 +1,6 @@
 # StudySum AI - Summaries and Chat with PDFs, Excel/CSV and YouTube Videos 📚
 
-This application allows you to summarize and chat with your PDF documents and YouTube videos. To make the most of this application, you need an API key from OpenAI and, optionally, an Access Token from HuggingFace. Here's how to get them:
+This application allows you to summarize and chat with your PDF documents, YouTube videos and Excel/CSV files. To make the most of this application, you need an API key from OpenAI and, optionally, an Access Token from HuggingFace. Here's how to get them:
 
 - **OpenAI API Key:** Sign up on [OpenAI](https://openai.com/) to get an API key. When creating your account for the first time, you will receive $5 in credit.
 
