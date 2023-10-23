@@ -46,7 +46,7 @@ Este proyecto utiliza 3 modelos de lenguaje grandes (LLMs) para procesar conteni
    - **GPT-3.5 Turbo:** Ofrece los mejores resultados, cuenta con dos variantes con límites de tokens de 4096 y 16,384. Puedes elegir el modelo según la longitud de tu texto.
 
 2. Modelos de código abierto: Requieren un Access Token de HuggingFace.
-   - **Mistral-7b-Instruct:** Considerado el mejor modelo de 7B hasta la fecha, proporciona respuestas aceptables, pero no alcanza el nivel de GPT, aunque tiene un limite de 8000 tokens.
+   - **Mistral-7b-Instruct:** Considerado uno de los mejores modelos de 7B hasta la fecha, proporciona respuestas aceptables, pero no alcanza el nivel de GPT, aunque tiene un limite de 8000 tokens.
    - **Falcon-7b-Instruct:** Tiene un límite de tokens más bajo, no funciona tan bien como GPT y Mistral, además proporciona resultados regulares con textos de alrededor de 1200 tokens.
 
 - La aplicación te mostrará cuál de tus archivos tiene el mayor número de tokens para ayudarte a decidir que modelo usar.
