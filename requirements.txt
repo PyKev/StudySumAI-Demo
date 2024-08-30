@@ -5,7 +5,7 @@ tabulate==0.9.0
 pypdf==3.17.0
 python_docx==0.8.11
 reportlab==4.0.5
-streamlit==1.30.0
+streamlit==1.37.0
 tiktoken==0.5.1
 faiss-cpu==1.7.4
 fonttools==4.43.0
