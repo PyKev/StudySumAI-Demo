@@ -40,5 +40,5 @@ with st.expander(language_dictionary["limitations"][index]):
 
 st.sidebar.info(f"""{language_dictionary["contact"][index]}:            
 - [LinkedIn](https://www.linkedin.com/in/kevinchavez24/)
-- [GitHub](https://github.com/KevChvz)
+- [GitHub](https://github.com/PyKev)
 """)
